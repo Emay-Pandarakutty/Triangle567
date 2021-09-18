@@ -50,19 +50,19 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(1.23, 5, 6), 'InvalidInput', '(1.23, 5, 6) is a InvalidInput')
 
     def testFloatInputB(self):
-        self.assertEqual(classifyTriangle(1, 5.3, 6), 'InvalidInput', '(1, 5.23, 6) is a InvalidInput')
+        self.assertEqual(classifyTriangle(1, 5.3, 6), 'InvalidInput', '(1, 5.3, 6) is a InvalidInput')
 
     def testFloatInputC(self):
-        self.assertEqual(classifyTriangle(1, 5, 6.3), 'InvalidInput', '(1, 5, 6.23) is a InvalidInput')
+        self.assertEqual(classifyTriangle(1, 5, 6.3), 'InvalidInput', '(1, 5, 6.3) is a InvalidInput')
 
     def testStringInputA(self):
-        self.assertEqual(classifyTriangle("a", 5, 6), 'InvalidInput', '("a", 5, 6) "a" InvalidInput datatype')
+        self.assertEqual(classifyTriangle("a", 5, 6), 'TypeError', '("a", 5, 6) "a" InvalidInput datatype')
 
     def testStringInputB(self):
-        self.assertEqual(classifyTriangle(1, "b", 6), 'InvalidInput', '(1, "b", 6) "b" InvalidInput datatype')
+        self.assertEqual(classifyTriangle(1, "b", 6), 'TypeError', '(1, "b", 6) "b" InvalidInput datatype')
 
     def testStringInputC(self):
-        self.assertEqual(classifyTriangle(1, 5, "c"), 'InvalidInput', '(1, 5, "c")  "c" InvalidInput datatype')
+        self.assertEqual(classifyTriangle(1, 5, "c"), 'TypeError', '(1, 5, "c")  "c" InvalidInput datatype')
 
     def testMaxPlus1A(self):
         self.assertEqual(classifyTriangle(201,4,5),'InvalidInput','201,4,5 "a = Max+1" is a InvalidInput')
